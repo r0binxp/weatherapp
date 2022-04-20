@@ -40,7 +40,7 @@ const SearchComponent = ({form, handleChange, handleCityChange, handleSubmit, ..
                     sx={{ width: "100%" }}
                     value={form.selectedCityState || ''}
                     onChange={(e: any, value: any | null) => handleCityChange(value)}
-                    getOptionLabel={(option: ICityState) => option.city + ', ' + option.state}
+                    getOptionLabel={(option: ICityState) => (option.city + ' - ' + option.state)}
                     renderInput={(params) => 
                         <TextField
                             className="col-auto	" 

@@ -23,7 +23,7 @@ function App() {
   })
   const [showNotFound, setShowNotFound] = useState<boolean>(false);
   const [forecasts, setForecasts] = useState<IForecast[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const getWeatherSearch = async () => {
     setLoading(true);
@@ -49,7 +49,6 @@ function App() {
            // now call the Weather API URL privides in the last call
            if(foreCastUrl) {
             let {data} = await axios.get(foreCastUrl)
-            console.log('DATA FORECAST FINAL', data)
             if(data.properties.periods.length) {
               setForecasts(data.properties.periods)
               
@@ -69,7 +68,6 @@ function App() {
   }
 
   const handleCityChange = (object: ICityState) => {
-    console.log('handled City State', object)
     setForm({
       ...form,
       city: object.city,
