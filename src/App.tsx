@@ -70,8 +70,8 @@ function App() {
   const handleCityChange = (object: ICityState) => {
     setForm({
       ...form,
-      city: object.city,
-      state: object.state,
+      city: object?.city,
+      state: object?.state,
       selectedCityState: object
     })
   }
