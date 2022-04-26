@@ -85,6 +85,7 @@ function App() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setForecasts([])
     getWeatherSearch()
   }
 
